@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://unpkg.com/vue"></script>
+    <meta charset="utf-8">
+
+    <title></title>
+</head>
+
+<body>
+    <div id="app">
+        <p v-for="counter in counters" v-if="tampil">{{counter}}</p>
+        <button type="button" v-on:click="fungsiSatu(123)" name="button">ALERT</button>
+        <div id="app-6">
+            <p>{{ message }}</p>
+            <input v-model="message">
+        </div>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+
+            counters: ['satu', 'dua', 'tiga'],
+            tampil: false,
+            message: ''
+        },
+        methods: {
+            fungsiSatu: function() {
+                this.tampil = true
+                // this.counters.push('ea')
+                alert(this.message)
+            }
+        }
+    })
+</script>
+
+</html>
